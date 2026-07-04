@@ -1,0 +1,92 @@
+html,body{
+  margin:0;
+  height:100%;
+  overflow:hidden;
+  background:#03040a;
+  font-family:serif;
+}
+
+/* 星空背景 */
+canvas{
+  position:fixed;
+  inset:0;
+  z-index:1;
+}
+
+/* 背景层 */
+.bg{
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(120,90,220,.18), transparent 60%),
+    linear-gradient(#02030a,#050616,#02030a);
+}
+
+/* 诗句 */
+.poem{
+  position:absolute;
+  color:rgba(230,240,255,.9);
+  font-size:20px;
+  pointer-events:none;
+  animation:up 10s linear forwards;
+  z-index:2;
+}
+
+@keyframes up{
+  from{transform:translateY(0);opacity:0;}
+  10%{opacity:1;}
+  to{transform:translateY(-120vh);opacity:0;}
+}
+
+/* ⚙ 按钮 */
+#settingsBtn{
+  position:fixed;
+  right:15px;
+  bottom:15px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#6a5cff;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
+  cursor:pointer;
+}
+
+/* 面板 */
+#panel{
+  position:fixed;
+  right:15px;
+  bottom:70px;
+  width:220px;
+  padding:10px;
+  background:rgba(10,12,25,.7);
+  border-radius:10px;
+  z-index:10;
+  color:white;
+  backdrop-filter:blur(10px);
+}
+
+#panel.hide{
+  display:none;
+}
+
+#panel input{
+  width:100%;
+  padding:6px;
+  margin-bottom:6px;
+}
+
+#panel button{
+  width:100%;
+  margin-top:5px;
+  padding:6px;
+}
+
+#count{
+  margin-top:6px;
+  font-size:12px;
+  opacity:.7;
+}
